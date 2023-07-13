@@ -11,7 +11,6 @@ e) Método perimetro(): para calcular el perímetro (Perimetro = 2 ∗ π ∗ ra
 package pooej02;
 
 import Servicio.ServicioCircunferencia;
-import Entidad.Circunferencia;
 
 /**
  *

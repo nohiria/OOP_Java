@@ -13,24 +13,20 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioCircunferencia {
-    private Circunferencia circulo= new Circunferencia();
+    private final Circunferencia circulo= new Circunferencia();
     
-    public Circunferencia crearCircunferencia(){
+    public void crearCircunferencia(){
         Scanner input= new Scanner(System.in);
         
-        //Se pide el atributo
         System.out.println("Ingrese el radio");
         circulo.setRadio(input.nextDouble());
-        return circulo;
     }
     
     public double area(){
-        double a= Math.PI*Math.pow(circulo.getRadio(), 2);
-        return a;
+        return Math.PI*Math.pow(circulo.getRadio(), 2); //pi*radio^2
     }
     
     public double perimetro(){
-        double per= 2*Math.PI*circulo.getRadio();
-        return per;
+        return 2*Math.PI*circulo.getRadio(); //2*pi*radio
     }
 }
