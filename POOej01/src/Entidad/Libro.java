@@ -13,9 +13,8 @@ public class Libro {
     private int ISBN;
     private String titulo;
     private String autor;
-    private int npaginas;
+    private int nPaginas;
 
-    
     //Constructores
     public Libro() {
     }
@@ -24,11 +23,10 @@ public class Libro {
         this.ISBN = ISBN;
         this.titulo = titulo;
         this.autor = autor;
-        this.npaginas = npaginas;
+        this.nPaginas = npaginas;
     }
     
     //Getter&Setter
-
     public int getISBN() {
         return ISBN;
     }
@@ -53,12 +51,17 @@ public class Libro {
         this.autor = autor;
     }
 
-    public int getNpaginas() {
-        return npaginas;
+    public int getNPaginas() {
+        return nPaginas;
     }
 
-    public void setNpaginas(int npaginas) {
-        this.npaginas = npaginas;
+    public void setNPaginas(int nPaginas) {
+        this.nPaginas = nPaginas;
     }
     
+    //toString
+    @Override
+    public String toString() {
+        return "Libro{" + "ISBN=" + ISBN + ", titulo=" + titulo + ", autor=" + autor + ", nPaginas=" + nPaginas + '}';
+    }
 }
