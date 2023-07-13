@@ -12,38 +12,44 @@ import Entidad.Cafetera;
  * @author nohyv
  */
 public class ServicioCafetera {
-    public Cafetera crearCafetera(int capacidad){
-        Cafetera ca= new Cafetera(capacidad, 0);
-        return ca;
+    Cafetera ca= new Cafetera();
+    
+    public void crearCafetera(int capacidad){
+        ca.setCapacidadMaxima(capacidad);
     }
     
     //Llenar Cafetera
-    public void llenarCafetera(Cafetera ca){
+    public void llenarCafetera(){
         ca.setCantidadActual(ca.getCapacidadMaxima());
+        System.out.println("Se llenó la cafetera. La cantidad actual es de: "+ca.getCantidadActual());
     }
     
     //Servir Taza
-    public void servirTaza(Cafetera ca, int taza){
-        if(ca.getCantidadActual()<taza){
-            System.out.println("La taza no se llenó, se sirvieron solo "+ca.getCantidadActual());
+    public void servirTaza(int taza){
+        if(ca.getCantidadActual()==0){
+            System.out.println("La cafetera está vacía, no se puede servir la taza");
+        }else if(ca.getCantidadActual()<taza){
+            System.out.println("La taza de tamaño "+taza+" no se llenó, se sirvieron solo "+ca.getCantidadActual());
             ca.setCantidadActual(0);
         }else{
             ca.setCantidadActual(ca.getCantidadActual()-taza);
-            System.out.println("La taza se llenó");
+            System.out.println("La taza se llenó con "+taza+". Restan "+ca.getCantidadActual()+" en la cafetera");
         }
     }
     
     //Vaciar Cafetera
-    public void vaciarCafetera(Cafetera ca){
+    public void vaciarCafetera(){
+        System.out.println("Se vació la cafetera");
         ca.setCantidadActual(0);
     }
     
     //Agregar cafe
-    public void agregarCafe(Cafetera ca, int cantidad){
+    public void agregarCafe(int cantidad){
         if(cantidad>ca.getCapacidadMaxima()){
-            System.out.println("Sobrepasa la capacidad, cafetera llena");
+            System.out.println(cantidad+ " sobrepasa la capacidad, cafetera llena");
             ca.setCantidadActual(ca.getCapacidadMaxima());
         }else{
+            System.out.println("Se agregaron "+cantidad+" a la cafetera");
             ca.setCantidadActual(cantidad);
         }
     }

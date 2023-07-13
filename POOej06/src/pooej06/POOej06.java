@@ -34,13 +34,14 @@ public class POOej06 {
      */
     public static void main(String[] args) {
         ServicioCafetera sc= new ServicioCafetera();
-        Cafetera cafetera1= sc.crearCafetera(1000);
+        sc.crearCafetera(1000);
+        sc.servirTaza(20);
         
-        sc.llenarCafetera(cafetera1);
-        sc.servirTaza(cafetera1, 100);
-        sc.servirTaza(cafetera1,1000);
-        sc.vaciarCafetera(cafetera1);
-        sc.agregarCafe(cafetera1, 2000);
+        sc.llenarCafetera();
+        sc.servirTaza(100);
+        sc.servirTaza(1000);
+        sc.vaciarCafetera();
+        sc.agregarCafe(2000);
     }
     
 }
