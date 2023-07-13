@@ -18,7 +18,6 @@ informa al usuario. Si no, se hace la división y se devuelve el resultado al ma
 
 package pooej03;
 
-import Entidad.Operacion;
 import Servicio.ServicioOperacion;
 
 /**
