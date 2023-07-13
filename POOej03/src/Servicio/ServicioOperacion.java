@@ -13,10 +13,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioOperacion {
-    private Operacion op= new Operacion();
+    private final Operacion op= new Operacion();
     
     //Crear "Operación"
-    public Operacion crearOperacion(){
+    public void crearOperacion(){
         Scanner input= new Scanner(System.in);
         
         //Pedir números
@@ -24,38 +24,27 @@ public class ServicioOperacion {
         op.setNumero1(input.nextDouble());
         System.out.println("Ingrese el segundo número");
         op.setNumero2(input.nextDouble());
-        
-        return op;
     }
     
-    public int sumar(){
-        int suma= (int) (op.getNumero1()+op.getNumero2());
-        return suma;
+    public double sumar(){
+        return op.getNumero1()+op.getNumero2();
     }
     
-    public int restar(){
-        int resta= (int) (op.getNumero1()-op.getNumero2());
-        return resta;
+    public double restar(){
+        return op.getNumero1()-op.getNumero2();
     }
     
-    public int multiplicar(){
-        if(op.getNumero2()==0||op.getNumero1()==0){
-            System.out.println("Error");
-            return 0;
-        }else{
-            int multiplicacion= (int) (op.getNumero1()*op.getNumero2());
-            return multiplicacion;
-        }
+    public double multiplicar(){
+        return op.getNumero1()*op.getNumero2();
     }
     
     public double dividir(){
         if(op.getNumero2()==0){
-            System.out.println("Error");
+            System.out.println("Error, no se puede dividir por 0");
             return 0;
-        }else{
-            double division= op.getNumero1()/op.getNumero2();
-            return division;
         }
+        
+        return op.getNumero1()/op.getNumero2();
     }
     
     public double mostrarNum1(){

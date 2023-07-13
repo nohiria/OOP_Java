@@ -5,7 +5,6 @@
  */
 package Entidad;
 
-import java.util.Scanner;
 
 /**
  *
