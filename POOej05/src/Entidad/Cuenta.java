@@ -12,19 +12,17 @@ package Entidad;
 public class Cuenta {
     private int numeroDeCuenta;
     private long DNI;
-    private int saldoActual;
-    
+    private double saldoActual;
     
     //Constructores
     public Cuenta() {
     }
 
-    public Cuenta(int numeroDeCuenta, long DNI, int saldoActual, double interes) {
+    public Cuenta(int numeroDeCuenta, long DNI, int saldoActual) {
         this.numeroDeCuenta = numeroDeCuenta;
         this.DNI = DNI;
-        this.saldoActual = (int)(saldoActual+saldoActual*(interes/100));
+        this.saldoActual = saldoActual;
     }
-    
     
     //Getter&Setter
     public int getNumeroDeCuenta() {
@@ -43,11 +41,11 @@ public class Cuenta {
         this.DNI = DNI;
     }
 
-    public int getSaldoActual() {
+    public double getSaldoActual() {
         return saldoActual;
     }
 
-    public void setSaldoActual(int saldoActual) {
+    public void setSaldoActual(double saldoActual) {
         this.saldoActual = saldoActual;
     }
 

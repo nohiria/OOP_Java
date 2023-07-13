@@ -13,10 +13,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioCuenta {
-    private Cuenta cuenta= new Cuenta();
+    private final Cuenta cuenta= new Cuenta();
     
     //Método crearCuenta
-    public Cuenta crearCuenta(){
+    public void crearCuenta(){
         Scanner input= new Scanner(System.in);
         
         System.out.println("Ingrese el número de cuenta");
@@ -24,31 +24,25 @@ public class ServicioCuenta {
         System.out.println("Ingrese el DNI del usuario");
         cuenta.setDNI(input.nextLong());
         System.out.println("Ingrese saldo actual");
-        int saldo= input.nextInt();
-        System.out.println("Ingrese interés");
-        double interes= input.nextDouble();
-        saldo+=(int) (saldo*(interes/100));
-        cuenta.setSaldoActual(saldo);
-        
-        return cuenta;
+        cuenta.setSaldoActual(input.nextInt());
+        input.nextLine();
     }
     
     //Método depósito
     public void ingresar(double ingreso){
         System.out.println("Depósito de "+ingreso);
-        int saldo= cuenta.getSaldoActual();
-        cuenta.setSaldoActual(saldo+=ingreso);
+        cuenta.setSaldoActual(cuenta.getSaldoActual()+ingreso);
     }
     
     //Método retiro
     public void retirar(double retiro){
-        int saldo= cuenta.getSaldoActual();
+        double saldo= cuenta.getSaldoActual();
         if(saldo<retiro){
             System.out.println("Retiro de "+saldo);
             cuenta.setSaldoActual(0);
         }else{
             System.out.println("Retiro de "+retiro);
-            cuenta.setSaldoActual((int) (saldo-retiro));
+            cuenta.setSaldoActual(saldo-retiro);
         }
     }
     
