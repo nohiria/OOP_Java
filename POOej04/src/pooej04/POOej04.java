@@ -10,7 +10,6 @@ Superficie = base * altura / Perímetro = (base + altura) * 2.
  */
 package pooej04;
 
-import Entidad.Rectangulo;
 import Servicio.ServicioRectangulo;
 
 /**

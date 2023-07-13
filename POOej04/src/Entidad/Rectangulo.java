@@ -24,7 +24,6 @@ public class Rectangulo {
     }
     
     //Getter&Setter
-
     public int getBase() {
         return base;
     }
