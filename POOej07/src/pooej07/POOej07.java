@@ -31,7 +31,6 @@ también calcularemos un porcentaje de cuantos son mayores de edad y cuantos men
  */
 package pooej07;
 
-import Entidad.Persona;
 import Servicio.ServicioPersona;
 
 /**
@@ -44,10 +43,8 @@ public class POOej07 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        //Crear servicio
-        ServicioPersona sp= new ServicioPersona();
-        //Crear array para almacenar personas 
-        Persona [] person= new Persona[4];
+        //Crear servicio array de personas
+        ServicioPersona[] grupoPersonas= new ServicioPersona[4];
         
         double personasBajoPeso=0;
         double personasPesoIdeal=0;
@@ -56,13 +53,16 @@ public class POOej07 {
         double personasMenorEdad=0;
         
         //Bucle para instanciar a las personas en el array y calcular su IMC y edad
-        for(int i=0; i<person.length; i++){
+        for(int i=0; i<grupoPersonas.length; i++){
             System.out.println("Persona "+(i+1));
-            //Crear persona
-            person[i]= sp.crearPersona();
+            //Se instancia la persona mediante el servicio
+            ServicioPersona persona= new ServicioPersona();
+            //Y se crea
+            persona.crearPersona();
             
+            System.out.println("Persona IMC "+ persona.calcularIMC());
             //¿Tiene peso ideal?
-            switch (sp.calcularIMC(person[i])) {
+            switch (persona.calcularIMC()) {
                 case -1:
                     System.out.println("Tiene bajo peso");
                     personasBajoPeso++; //Se clasifican las personas según su índice
@@ -78,7 +78,7 @@ public class POOej07 {
             }
             
             //¿Es mayor de edad?
-            if(sp.esMayor(person[i])){
+            if(persona.esMayor()){
                 System.out.println("Es mayor de edad");
                 personasMayorEdad++;
             }else{
@@ -89,13 +89,13 @@ public class POOej07 {
         }
         
         //IMC porcentajes
-        System.out.println("Porcentaje personas con bajo peso: "+personasBajoPeso/person.length*100+"%");
-        System.out.println("Porcentaje personas con peso ideal: "+personasPesoIdeal/person.length*100+"%");
-        System.out.println("Porcentaje personas con sobrepeso: "+personasSobrepeso/person.length*100+"%");
+        System.out.println("Porcentaje personas con bajo peso: "+personasBajoPeso/grupoPersonas.length*100+"%");
+        System.out.println("Porcentaje personas con peso ideal: "+personasPesoIdeal/grupoPersonas.length*100+"%");
+        System.out.println("Porcentaje personas con sobrepeso: "+personasSobrepeso/grupoPersonas.length*100+"%");
         
         //Edad porcentajes
-        System.out.println("Porcentaje personas menores de edad: "+personasMenorEdad/person.length);
-        System.out.println("Porcentaje personas mayores de edad: "+personasMayorEdad/person.length);
+        System.out.println("Porcentaje personas menores de edad: "+personasMenorEdad/grupoPersonas.length);
+        System.out.println("Porcentaje personas mayores de edad: "+personasMayorEdad/grupoPersonas.length);
         
     }
     

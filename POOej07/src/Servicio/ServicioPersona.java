@@ -13,12 +13,11 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioPersona {
+    private final Persona persona= new Persona();
     
     //Crear persona
-    public Persona crearPersona(){
+    public void crearPersona(){
         Scanner input= new Scanner(System.in);
-        //Instanciar Persona
-        Persona persona= new Persona();
         
         System.out.println("Ingrese nombre");
         persona.setNombre(input.nextLine());
@@ -36,17 +35,15 @@ public class ServicioPersona {
         persona.setPeso(input.nextDouble());
         System.out.println("Ingrese altura");
         persona.setAltura(input.nextDouble());
-        
-        return persona;
     }
     
     //Calcular IMC
-    public int calcularIMC(Persona persona){
+    public int calcularIMC(){
         double imc= persona.getPeso()/Math.pow(persona.getAltura(), 2);
         
         if (imc<20){
             return -1;
-        }else if(imc>=20||imc<=25){
+        }else if(imc>=20&&imc<=25){
             return 0;
         }else{
             return 1;
@@ -54,7 +51,7 @@ public class ServicioPersona {
     }
     
     //¿Es mayor de edad?
-    public boolean esMayor(Persona persona){
+    public boolean esMayor(){
         return persona.getEdad()>=18;
     }
 }

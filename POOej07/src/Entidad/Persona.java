@@ -52,7 +52,9 @@ public class Persona {
     }
 
     public void setSexo(String sexo) {
-        this.sexo = sexo;
+        if(sexo.equalsIgnoreCase("H")||sexo.equalsIgnoreCase("M")||sexo.equalsIgnoreCase("O")){
+          this.sexo = sexo;  
+        }
     }
 
     public double getPeso() {
@@ -70,9 +72,4 @@ public class Persona {
     public void setAltura(double altura) {
         this.altura = altura;
     }
-
-    public int calcularIMC(Persona persona) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-    
 }
