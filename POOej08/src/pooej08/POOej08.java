@@ -24,9 +24,7 @@ ingresa el usuario y devuelve verdadero si la contiene y falso si no.
  */
 package pooej08;
 
-import Entidad.Cadena;
 import Servicio.ServicioCadena;
-import java.util.Scanner;
 
 /**
  *
@@ -40,14 +38,14 @@ public class POOej08 {
     public static void main(String[] args) {
         ServicioCadena sc= new ServicioCadena();
         
-        Cadena palabra= sc.crearCadena();
+        sc.crearCadena();
         
-        sc.mostrarVocales(palabra);
-        sc.invertirFrase(palabra);
-        sc.vecesRepetido(palabra, "a");
-        sc.compararLongitud(palabra, "Me llamo Nohiria");
-        sc.unirFrases(palabra, " y me gusta el chocolate");
-        sc.reemplazar(palabra, "%");
-        System.out.println("¿Contiene la letra? "+sc.contiene(palabra, "e"));
+        sc.mostrarVocales();
+        sc.invertirFrase();
+        sc.vecesRepetido("a");
+        sc.compararLongitud("Hola a todos.");
+        sc.unirFrases(" ¿Cómo están?");
+        sc.reemplazar("%");
+        System.out.println("¿Contiene la letra? "+sc.contiene("e"));
     }
 }

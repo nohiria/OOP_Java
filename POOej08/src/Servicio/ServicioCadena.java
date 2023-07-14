@@ -13,19 +13,19 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioCadena {
-    private Scanner input= new Scanner(System.in);
+    private final Scanner input= new Scanner(System.in);
+    private final Cadena cadena= new Cadena();
     
-    public Cadena crearCadena(){
+    public void crearCadena(){
         System.out.println("Ingrese la frase o cadena");
-        Cadena cadena= new Cadena(input.nextLine());
-        return cadena;
+        cadena.setFrase(input.nextLine());
     }
     
-    public void mostrarVocales(Cadena cadena){
+    public void mostrarVocales(){
         int cont=0;
         
         for(int i=0; i<cadena.getLongitud(); i++){
-            String letra= cadena.getFrase().substring(i, i+1);
+            String letra= cadena.getFrase().substring(i, i+1); //Separa las letras y si es una vocal la añade al contador
             if(letra.equalsIgnoreCase("a")||letra.equalsIgnoreCase("e")||letra.equalsIgnoreCase("i")||letra.equalsIgnoreCase("o")||letra.equalsIgnoreCase("u")){
                 cont++;
             }
@@ -33,7 +33,7 @@ public class ServicioCadena {
         System.out.println("La frase tiene "+cont+" vocales");
     }
     
-    public void invertirFrase(Cadena cadena){
+    public void invertirFrase(){
         String fraseAlReves="";
         for(int i=cadena.getLongitud()-1;i>=0; i--){
             fraseAlReves += cadena.getFrase().charAt(i);
@@ -42,20 +42,20 @@ public class ServicioCadena {
     }
     
     //Veces repetido
-    public void vecesRepetido(Cadena cadena, String letra){
+    public void vecesRepetido(String letra){
         int cont=0;
         
         for(int i=0; i<cadena.getLongitud(); i++){    
             String caracterPalabra= cadena.getFrase().substring(i, i+1);
             if(letra.equalsIgnoreCase(caracterPalabra)){
-                cont++;
+                cont++; //Se cuenta +1 si la letra ingresada por el usuario se encuentra en la palabra
             }
         }
         System.out.println(letra+" está repetida "+cont+" veces");
     }
     
     //Comparar longitud
-    public void compararLongitud(Cadena cadena, String fraseComparacion){
+    public void compararLongitud(String fraseComparacion){
         if(cadena.getLongitud()==fraseComparacion.length()){
             System.out.println("Frases tienen la misma longitud");
         }else{
@@ -64,13 +64,13 @@ public class ServicioCadena {
     }
     
     //Unir frases
-    public void unirFrases(Cadena cadena, String fraseAUnir){
+    public void unirFrases(String fraseAUnir){
         String nuevaFrase= cadena.getFrase().concat(fraseAUnir);
         System.out.println(nuevaFrase);
     }
     
     //Reemplazar letra
-    public void reemplazar(Cadena cadena, String letra){
+    public void reemplazar(String letra){
         String palabraNueva="";
         for(int i=0; i<cadena.getLongitud(); i++){
             String letraFrase= cadena.getFrase().substring(i, i+1);
@@ -83,7 +83,7 @@ public class ServicioCadena {
     }
     
     //Buscar letra
-    public boolean contiene(Cadena cadena, String letra){
+    public boolean contiene(String letra){
         boolean letraContenida=false;
         for(int i=0; i<cadena.getLongitud(); i++){
             if(cadena.getFrase().substring(i,i+1).equalsIgnoreCase(letra)){
