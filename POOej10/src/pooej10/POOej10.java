@@ -9,8 +9,9 @@ ordenados al arreglo B de 20 elementos, y rellenar los 10 últimos elementos con
  */
 package pooej10;
 
-import Entidad.Arreglos;
-import Servicio.ArreglosServicio;
+import java.math.BigDecimal;
+import java.util.Arrays;
+
 
 /**
  *
@@ -22,13 +23,27 @@ public class POOej10 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        ArreglosServicio as= new ArreglosServicio();
-        Arreglos arreglos= as.crearArreglos();
+        double[] arrayA= new double[50];
+        double[] arrayB= new double[20];
         
-        as.inicializarArregloA(arreglos);
-        as.ordenarArregloA(arreglos);
-        as.copiarArregloA(arreglos);
-        as.mostrarArreglos(arreglos);
+        //Llenar Array A con números aleatorios
+        for (int i = 0; i < arrayA.length; i++) {
+            double numRandom = Math.random() * 10;
+            BigDecimal bd = new BigDecimal(numRandom).setScale(2, BigDecimal.ROUND_HALF_UP);
+            arrayA[i] = bd.doubleValue();
+        }
+        
+        //Mostrar Array A por pantalla
+        System.out.println("ArrayA: "+Arrays.toString(arrayA));
+        //Ordenar Array A de menor a mayor
+        Arrays.sort(arrayA);
+        //Copiar números del Array A en el Array B
+        arrayB= Arrays.copyOfRange(arrayA, 0, 20);
+        //Rellenar los 10 numeros finales del Array B con el valor 0.5
+        Arrays.fill(arrayB, 10, arrayB.length, 0.5);
+        //Mostrar arreglos resultantes
+        System.out.println("Array A:"+Arrays.toString(arrayA));
+        System.out.println("Array B:"+Arrays.toString(arrayB));
     }
     
 }
