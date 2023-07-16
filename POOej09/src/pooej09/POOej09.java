@@ -12,7 +12,6 @@ Antes de calcular la raíz cuadrada se debe obtener el valor absoluto del númer
  */
 package pooej09;
 
-import Entidad.Matematica;
 import Servicio.MatematicaServicio;
 
 /**
@@ -25,12 +24,12 @@ public class POOej09 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        MatematicaServicio ms= new MatematicaServicio();
-        Matematica operaciones = ms.asignarAleatorios(); 
+        MatematicaServicio operaciones= new MatematicaServicio();
+        operaciones.asignarAleatorios();
         
-        System.out.println("El mayor de los números es: "+MatematicaServicio.devolverMayor(operaciones));
-        System.out.println("La potencia del num mayor y el menor es "+MatematicaServicio.calcularPotencia(operaciones));
-        System.out.println("La raiz del num menor es "+MatematicaServicio.calculaRaiz(operaciones));
+        System.out.println("El mayor de los números es: "+operaciones.devolverMayor());
+        System.out.println("La potencia del num mayor y el menor es "+operaciones.calcularPotencia());
+        System.out.println("La raiz del num menor es "+operaciones.calculaRaiz());
     }
     
 }
