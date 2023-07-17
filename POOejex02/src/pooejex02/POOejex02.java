@@ -8,7 +8,6 @@ calcular la distancia entre dos puntos consulte el siguiente link:
  */
 package pooejex02;
 
-import Entidad.Puntos;
 import Servicio.ServicioPuntos;
 
 /**
@@ -22,9 +21,9 @@ public class POOejex02 {
      */
     public static void main(String[] args) {
         ServicioPuntos sp= new ServicioPuntos();
-        Puntos puntos= sp.crearPuntos();
+        sp.crearPuntos();
         
-        System.out.println("La distancia entre los dos puntos es de "+sp.calcularDistancia(puntos));
+        System.out.println("La distancia entre los dos puntos es de "+sp.calcularDistancia());
     }
     
 }

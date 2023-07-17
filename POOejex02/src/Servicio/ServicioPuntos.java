@@ -13,11 +13,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioPuntos {
+    private final Puntos puntos= new Puntos();
+    private final Scanner input= new Scanner(System.in);
     
-    private Scanner input= new Scanner(System.in);
-    
-    public Puntos crearPuntos(){
-        Puntos puntos= new Puntos();
+    public void crearPuntos(){
         System.out.println("Punto 1");
         System.out.println("Ingrese x1");
         puntos.setX1(input.nextDouble());
@@ -28,11 +27,9 @@ public class ServicioPuntos {
         puntos.setX2(input.nextDouble());
         System.out.println("Ingrese y2");
         puntos.setY2(input.nextDouble());
-        
-        return puntos;
     }
     
-    public double calcularDistancia(Puntos puntos){
+    public double calcularDistancia(){
         double x1= puntos.getX1();
         double x2= puntos.getX2();
         double y1= puntos.getY1();
