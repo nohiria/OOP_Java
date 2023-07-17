@@ -32,21 +32,21 @@ public class POOej12 {
     public static void main(String[] args) {
         //Instanciar Servicio
         ServicioPersona sp= new ServicioPersona();
-        //Crear persona usando el servicio
-        Persona persona1= sp.crearPersona();
+        sp.crearPersona();
+        
         
         //Calcular edad
-        System.out.println("La persona tiene "+sp.calcularEdad(persona1)+" años");
+        System.out.println("La persona tiene "+sp.calcularEdad()+" años");
         
         //Calcular si tiene más de 29
-        if(sp.menorQue(persona1, 29)){
+        if(sp.menorQue(29)){
             System.out.println("Es menor de 29");
         }else{
             System.out.println("Es mayor de 29");
         }
         
         //Mostrar persona
-        sp.mostrarPersona(persona1);
+        sp.mostrarPersona();
     }
     
 }

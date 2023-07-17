@@ -15,11 +15,9 @@ import java.util.Scanner;
  */
 public class ServicioPersona {
     private final Scanner input= new Scanner(System.in);
+    private final Persona persona= new Persona();
     
-    public Persona crearPersona(){
-        //Instancia persona
-        Persona persona= new Persona();
-        
+    public void crearPersona(){
         //Solicita nombre de la persona
         System.out.println("Ingrese el nombre de la persona");
         persona.setNombre(input.nextLine());
@@ -44,21 +42,20 @@ public class ServicioPersona {
         }
         
         persona.setFechaDeNacimiento(fechaDeNacimiento);
-        return persona;
     }
     
-    public int calcularEdad(Persona persona){ //Devuelve la edad en años
+    public int calcularEdad(){ //Devuelve la edad en años
         Date fechaActual= new Date();
         
         int edad= fechaActual.getYear()-persona.getFechaDeNacimiento().getYear();
         return edad;
     }
     
-    public boolean menorQue(Persona persona, int edad){ //Comprueba si la persona tiene una edad menor a la ingresada
-        return edad>=calcularEdad(persona);
+    public boolean menorQue(int edad){ //Comprueba si la persona tiene una edad menor a la ingresada
+        return edad>=calcularEdad();
     }
     
-    public void mostrarPersona(Persona persona){
+    public void mostrarPersona(){
         System.out.println("Nombre: "+persona.getNombre()+", Fecha de Nacimiento "+persona.getFechaDeNacimiento());
     }
     
