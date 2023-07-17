@@ -15,9 +15,7 @@ números de un celular. Para ello, puede utilizarse un bucle repetitivo
  */
 package pooej14;
 
-import Entidad.Movil;
 import Servicio.ServicioMovil;
-import java.util.Arrays;
 
 /**
  *
@@ -30,9 +28,9 @@ public class POOej14 {
      */
     public static void main(String[] args) {
         ServicioMovil sm= new ServicioMovil();
-        Movil movil1= sm.cargarCelular();
+        sm.cargarCelular();
         
-        System.out.println(Arrays.toString(movil1.getCodigo()));
+        sm.mostrarCodigo();
     }
     
 }

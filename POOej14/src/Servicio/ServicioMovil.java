@@ -6,6 +6,7 @@
 package Servicio;
 
 import Entidad.Movil;
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -13,12 +14,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioMovil {
-
+    private final Movil celular= new Movil();
     private final Scanner input = new Scanner(System.in);
 
-    public Movil cargarCelular() {
-        Movil celular = new Movil();
-
+    public void cargarCelular() {
         System.out.println("Ingrese la marca");
         celular.setMarca(input.nextLine());
         System.out.println("Ingrese el precio");
@@ -33,10 +32,11 @@ public class ServicioMovil {
         input.nextLine();
         System.out.println("Ingrese el código");
         celular.setCodigo(ingresarCodigo());
-
-        return celular;
     }
 
+    public void mostrarCodigo(){
+        System.out.println("El cpodigo del móvil es: "+Arrays.toString(celular.getCodigo()));
+    }
     private int[] ingresarCodigo() {
         String cadenaCodigo = input.nextLine();
         int[] codigo = new int[7];
