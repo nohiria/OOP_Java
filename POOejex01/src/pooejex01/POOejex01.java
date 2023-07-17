@@ -6,6 +6,8 @@ además definir los métodos getters y setters correspondientes.
  */
 package pooejex01;
 
+import Entidad.Cancion;
+
 /**
  *
  * @author nohyv
@@ -16,7 +18,7 @@ public class POOejex01 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Cancion cancion= new Cancion("Imagine", "John Lennon");
     }
     
 }

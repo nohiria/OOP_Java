@@ -40,4 +40,10 @@ public class Cancion {
     public void setAutor(String autor) {
         this.autor = autor;
     }
+    
+    //toString
+    @Override
+    public String toString() {
+        return "Cancion{" + "titulo=" + titulo + ", autor=" + autor + '}';
+    }
 }
