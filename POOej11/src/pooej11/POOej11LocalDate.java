@@ -57,7 +57,7 @@ public class POOej11LocalDate {
         //Se usa la clase Period para obtener la diferencia entre las fechas
         Period yearsBetween= Period.between(fecha1, fechaActual);
         
-        System.out.println("Entre la fecha de y la fecha actual hay "+yearsBetween.getYears()+" años de diferencia");
+        System.out.println("Entre la fecha ingresada y la fecha actual hay "+yearsBetween.getYears()+" años de diferencia");
     }
     
     public static int diasDelMes(int month, int year) {
