@@ -14,11 +14,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioNIF {
-    private Scanner input= new Scanner(System.in);
+    private final NIF nif= new NIF();
+    private final Scanner input= new Scanner(System.in);
     
-    public NIF crearNIF(){
-        NIF nif= new NIF();
-        
+    public void crearNIF(){
         System.out.println("Ingrese el número de documento");
         long dni= input.nextLong();
         while(dni>=99999999&&dni<=0){
@@ -27,11 +26,9 @@ public class ServicioNIF {
         }
         nif.setDNI(dni);
         nif.setLetra(devolverLetra(dni));
-        
-        return nif;
     }
     
-    public void mostrarNIF(NIF nif){
+    public void mostrarNIF(){
         String[] dni= new String[8];
         String numDni= String.valueOf(nif.getDNI()); //Se crea una cadena con los caracteres del dni
         Arrays.fill(dni, 0, 7, "0");//Se llena el arreglo dni con ceros
@@ -43,8 +40,8 @@ public class ServicioNIF {
         }
         
         System.out.print(nif.getLetra()+"-");
-        for(int i=0; i<dni.length; i++){
-            System.out.print(dni[i]);
+        for (String dni1 : dni) {
+            System.out.print(dni1);
         }
     }
     

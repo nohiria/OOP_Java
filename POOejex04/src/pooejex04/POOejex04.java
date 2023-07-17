@@ -43,7 +43,6 @@ POSICIÓN LETRA
  */
 package pooejex04;
 
-import Entidad.NIF;
 import Servicio.ServicioNIF;
 
 /**
@@ -57,9 +56,9 @@ public class POOejex04 {
      */
     public static void main(String[] args) {
         ServicioNIF sn= new ServicioNIF();
-        NIF nif= sn.crearNIF();
+        sn.crearNIF();
         
-        sn.mostrarNIF(nif);
+        sn.mostrarNIF();
         
     }
     
