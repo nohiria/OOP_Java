@@ -5,6 +5,8 @@
  */
 package Entidad;
 
+import java.util.Arrays;
+
 /**
  *
  * @author nohyv
@@ -43,7 +45,9 @@ public class Curso {
     }
 
     public void setCantidadHorasPorDia(int cantidadHorasPorDia) {
-        this.cantidadHorasPorDia = cantidadHorasPorDia;
+        if(cantidadHorasPorDia<=24&&cantidadHorasPorDia>0){
+            this.cantidadHorasPorDia = cantidadHorasPorDia;   
+        }
     }
 
     public int getCantidadDiasPorSemana() {
@@ -51,7 +55,9 @@ public class Curso {
     }
 
     public void setCantidadDiasPorSemana(int cantidadDiasPorSemana) {
-        this.cantidadDiasPorSemana = cantidadDiasPorSemana;
+        if(cantidadDiasPorSemana<=7&&cantidadDiasPorSemana>0){
+            this.cantidadDiasPorSemana = cantidadDiasPorSemana;  
+        }
     }
 
     public String getTurno() {
@@ -59,7 +65,9 @@ public class Curso {
     }
 
     public void setTurno(String turno) {
-        this.turno = turno;
+        if(turno.equalsIgnoreCase("M")||turno.equalsIgnoreCase("T")){
+            this.turno = turno;    
+        }
     }
 
     public double getPrecioPorHora() {
@@ -77,5 +85,12 @@ public class Curso {
     public void setAlumnos(String[] alumnos) {
         this.alumnos = alumnos;
     }
+    
+    //toString
+    @Override
+    public String toString() {
+        return "Curso{" + "nombreCurso=" + nombreCurso + ", cantidadHorasPorDia=" + cantidadHorasPorDia + ", cantidadDiasPorSemana=" + cantidadDiasPorSemana + ", turno=" + turno + ", precioPorHora=" + precioPorHora + ", alumnos=" + Arrays.toString(alumnos) + '}';
+    }
+    
     
 }

@@ -13,11 +13,10 @@ import java.util.Scanner;
  * @author nohyv
  */
 public class ServicioCurso {
-    Scanner input= new Scanner(System.in);
+    private final Scanner input= new Scanner(System.in);
+    private final Curso curso= new Curso();
     
-    public Curso crearCurso(){
-        Curso curso= new Curso();
-        
+    public void crearCurso(){
         System.out.println("Ingrese el nombre del curso");
         curso.setNombreCurso(input.nextLine());
         System.out.println("Ingrese la cantidad de horas/día del curso");
@@ -31,7 +30,6 @@ public class ServicioCurso {
         curso.setPrecioPorHora(input.nextInt());
         input.nextLine();
         curso.setAlumnos(cargarAlumnos());
-        return curso;
     }
     
     private String[] cargarAlumnos(){
@@ -44,7 +42,11 @@ public class ServicioCurso {
         return alumnos;
     }
     
-    public double calcularGananciaSemanal(Curso curso){
+    public double calcularGananciaSemanal(){
         return curso.getPrecioPorHora()*curso.getCantidadHorasPorDia()*curso.getCantidadDiasPorSemana()*5;
+    }
+    
+    public void mostrarCurso(){
+        System.out.println(curso.toString());
     }
 }

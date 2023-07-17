@@ -23,7 +23,6 @@ se repite el encuentro.
  */
 package pooej13;
 
-import Entidad.Curso;
 import Servicio.ServicioCurso;
 
 /**
@@ -37,9 +36,9 @@ public class POOej13 {
      */
     public static void main(String[] args) {
         ServicioCurso sc= new ServicioCurso();
-        Curso curso1= sc.crearCurso();
-        
-        System.out.println(sc.calcularGananciaSemanal(curso1));
+        sc.crearCurso();
+        System.out.println(sc.calcularGananciaSemanal());
+        sc.mostrarCurso();
     }
     
 }
