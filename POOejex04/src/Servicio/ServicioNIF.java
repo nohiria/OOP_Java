@@ -24,10 +24,11 @@ public class ServicioNIF {
             System.out.println("Ingrese un número válido");
             dni= input.nextLong();
         }
-        nif.setDNI(dni);
+        nif.setDNI(dni); //Guarda el número de DNI
         nif.setLetra(devolverLetra(dni));
     }
     
+    //Muestra DNI en formato "C-0000000"
     public void mostrarNIF(){
         String[] dni= new String[8];
         String numDni= String.valueOf(nif.getDNI()); //Se crea una cadena con los caracteres del dni
