@@ -18,7 +18,7 @@ public class AdivinaMes {
         this.secretMonth= months[9];
     }
 
-    public AdivinaMes(int monthNumb) { //Inicializa el mes secreto según el número del mes (1 al 12) introducido por el usuario
+    public AdivinaMes(int monthNumb) { //Inicializa el mes secreto según el número del mes (1 al 12) ingresado por el usuario
         monthNumb= monthNumb-1; //Se le resta uno para que entre dentro del rango 
         
         if(monthNumb>=0&&monthNumb<=11){ //Se comprueba que esté dentro de los índices del array
@@ -30,4 +30,9 @@ public class AdivinaMes {
     public String getSecretMonth() {
         return secretMonth;
     }
+
+    public void setSecretMonth(String secretMonth) {
+        this.secretMonth = secretMonth;
+    }
+    
 }
