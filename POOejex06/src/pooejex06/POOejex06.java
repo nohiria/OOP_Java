@@ -24,6 +24,8 @@ se quede sin intentos. Este método se llamará en el main.
  */
 package pooejex06;
 
+import Servicio.AhorcadoServicio;
+
 /**
  *
  * @author nohyv
@@ -34,7 +36,9 @@ public class POOejex06 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        AhorcadoServicio as= new AhorcadoServicio();
+        as.crearJuego();
+        as.longitud();
     }
     
 }
