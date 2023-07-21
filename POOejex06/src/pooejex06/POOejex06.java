@@ -37,8 +37,7 @@ public class POOejex06 {
      */
     public static void main(String[] args) {
         AhorcadoServicio as= new AhorcadoServicio();
-        as.crearJuego();
-        as.longitud();
+        as.juego();
     }
     
 }
