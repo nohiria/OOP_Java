@@ -31,8 +31,8 @@ public class AhorcadoServicio {
         System.out.println("1.Fácil");
         System.out.println("2.Media");
         System.out.println("3.Difícil");
-        int dificultad= Integer.parseInt(input.nextLine());
-        while(dificultad<1||dificultad>3){
+        int dificultad= Integer.parseInt(input.nextLine()); 
+        while(dificultad<1||dificultad>3){ //Validar input
             System.out.println("Ingrese un número válido.");
             dificultad= Integer.parseInt(input.nextLine());
         }
@@ -50,12 +50,12 @@ public class AhorcadoServicio {
                 break;
         }
         
-        char[] palabra= new char[p.length()];
-        palabraEncontrada= new char[p.length()];
+        char[] palabra= new char[p.length()]; 
+        palabraEncontrada= new char[p.length()]; //Para validar las letras encontradas
         for(int i=0; i<p.length(); i++){
             char letra= p.charAt(i);
-            palabra[i]= letra;
-            palabraEncontrada[i]= '_';
+            palabra[i]= letra; //En la palabra se ingresa la letra
+            palabraEncontrada[i]= '_'; //En las encontradas se crea el espacio '_'
         }
         
         ahorcado.setPalabra(palabra);
@@ -70,19 +70,19 @@ public class AhorcadoServicio {
  
     public void buscar(char letraIngresada){
         char[] palabra= ahorcado.getPalabra();
-        boolean encontrada= false;
-        if(encontradas(letraIngresada)){
+        boolean letraEncontrada= false;
+        if(encontradas(letraIngresada)){ //Comprueba si ha sido ingresada anteriormente
             System.out.println("La letra ya había sido ingresada");
             ahorcado.setJugadasMaximas(ahorcado.getJugadasMaximas()-1);
-        }else{
+        }else{ //Sino se itera el vector para buscar la letra en la palabra
             for(int i=0; i<palabra.length; i++){
-                if(palabra[i]==letraIngresada){
-                    encontrada = true;
+                if(palabra[i]==letraIngresada){ //Si coincide se ingresa al espacio correspondiente
+                    letraEncontrada = true;
                     palabraEncontrada[i] = letraIngresada;
                 }
             }
             
-            if(encontrada){
+            if(letraEncontrada){
                 System.out.println("Letra encontrada");
             }else{
                 System.out.println("Letra no encontrada");
@@ -92,9 +92,10 @@ public class AhorcadoServicio {
         
     }
     
-    private boolean encontradas(char letra){
+    //Itera el vector de letras encontradas en búsqueda de coincidencias
+    private boolean encontradas(char letraIngresada){ 
         for(int i=0; i<palabraEncontrada.length; i++){
-            if(palabraEncontrada[i]==letra){
+            if(palabraEncontrada[i]==letraIngresada){
                 return true;
             }
         }
